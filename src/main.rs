@@ -6,7 +6,7 @@ use cursive::views::{Checkbox, Dialog, EditView, ListView};
 use cursive::Cursive;
 
 #[derive(Parser)]
-#[command(name = "capysay", version = "0.2.0", about = "A Rust-based CLI tool for customizable Capybara ASCII art with colorful messages!")]
+#[command(name = "capysay", version = "0.3.0", about = "A Rust-based CLI tool for customizable Capybara ASCII art with colorful messages!")]
 struct CLI {
     #[command(subcommand)]
     command: Option<Commands>,
@@ -32,8 +32,6 @@ enum Commands {
         /// Make the Capybara appear dead.
         dead: bool,
     },
-    /// Placeholder for GUI implementation
-    Gui,
 }
 
 fn run_default_mode(message: String, dead: bool) {
@@ -132,12 +130,6 @@ fn run_tui_mode(_message: String, _dead: bool) {
     siv.run();
 }
 
-fn run_gui_mode() {
-    println!("Launching Capysay in GUI mode...");
-    // Placeholder for TUI implementation
-    // Add the logic for TUI mode here
-}
-
 fn main() {
     let cli = CLI::parse();
 
@@ -147,9 +139,6 @@ fn main() {
         }
         Some(Commands::Tui { message, dead }) => {
             run_tui_mode(message, dead);
-        }
-        Some(Commands::Gui) => {
-            run_gui_mode();
         }
         None => {
             println!("Use `--help` for available commands and options.");

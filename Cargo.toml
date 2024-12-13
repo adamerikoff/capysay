@@ -1,6 +1,6 @@
 [package]
 name = "capysay"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2021"
 license = "MIT"
 description = "A Rust-based CLI tool for customizable Capybara ASCII art with colorful messages."
@@ -9,3 +9,4 @@ description = "A Rust-based CLI tool for customizable Capybara ASCII art with co
 clap = { version = "4.5.23", features = ["derive"] }
 colored = "2.1.0"
 cursive = "0.21.1"
+gtk = "0.18.2"
