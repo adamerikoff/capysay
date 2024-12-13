@@ -1,0 +1,10 @@
+[package]
+name = "capysay"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "A capysay cli."
+
+[dependencies]
+clap = { version = "4.5.23", features = ["derive"] }
+colored = "2.1.0"
